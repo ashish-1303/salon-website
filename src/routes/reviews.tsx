@@ -7,13 +7,13 @@ import { getReviews } from "@/lib/data";
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Client Reviews — Verve & Balm Salon" },
+      { title: "Client Reviews — Glow & Grace Salon" },
       {
         name: "description",
         content:
-          "Read honest reviews from Verve & Balm clients on cuts, colour, shaves, facials and bridal makeup.",
+          "Read honest reviews from Glow & Grace clients on cuts, colour, shaves, facials and bridal makeup.",
       },
-      { property: "og:title", content: "Client Reviews — Verve & Balm Salon" },
+      { property: "og:title", content: "Client Reviews — Glow & Grace Salon" },
       { property: "og:description", content: "What our clients say after sitting in the chair." },
     ],
   }),
@@ -29,7 +29,7 @@ function ReviewsPage() {
         <SectionHeading
           eyebrow="In their words"
           title="Client reviews"
-          subtitle="Unedited notes from the people who keep coming back."
+          subtitle="Feedbacks from the people who keep coming back."
           align="center"
         />
 

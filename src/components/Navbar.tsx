@@ -20,11 +20,11 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 px-4 pt-4">
-      <nav className="mx-auto max-w-6xl rounded-3xl md:rounded-full bg-white/80 backdrop-blur-md px-5 py-3 shadow-[0_10px_30px_-15px_rgba(90,76,66,0.4)] border border-white">
+      <nav className="mx-auto max-w-6xl rounded-3xl md:rounded-full bg-white/80 backdrop-blur-md px-5 py-3 shadow-[0_10px_30px_-15px_rgba(100,50,120,0.25)] border border-white">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
             <span className="size-9 rounded-full bg-gradient-to-br from-brand to-accent-soft grid place-items-center text-white font-display font-bold text-lg shadow-inner">
-              V
+              G
             </span>
             <span className="font-display font-semibold text-lg tracking-tight">{salon.name}</span>
           </Link>

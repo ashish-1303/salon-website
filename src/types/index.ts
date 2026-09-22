@@ -5,10 +5,6 @@ export interface Service {
   name: string;
   description: string;
   category: ServiceCategory;
-  /** Price in USD */
-  price: number;
-  /** Duration in minutes */
-  durationMinutes: number;
   imageUrl: string;
   featured?: boolean;
 }

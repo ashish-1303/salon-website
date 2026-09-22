@@ -31,10 +31,6 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
       <div className="p-5">
         <h3 className="font-display font-semibold text-xl">{service.name}</h3>
         <p className="mt-1 text-sm text-ink/60">{service.description}</p>
-        <div className="mt-4 flex items-center justify-between text-sm font-bold">
-          <span className="text-brand-dark">{formatPrice(service.price)}</span>
-          <span className="text-ink/40">{formatDuration(service.durationMinutes)}</span>
-        </div>
       </div>
     </motion.article>
   );

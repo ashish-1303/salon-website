@@ -10,13 +10,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Verve & Balm Salon" },
+      { title: "Gallery — Glow & Grace Salon" },
       {
         name: "description",
         content:
-          "Photos of our salon interior, styling work and before-and-after transformations at Verve & Balm.",
+          "Photos of our salon interior, styling work and before-and-after transformations at Glow & Grace.",
       },
-      { property: "og:title", content: "Gallery — Verve & Balm Salon" },
+      { property: "og:title", content: "Gallery — Glow & Grace Salon" },
       { property: "og:description", content: "A look inside the studio and the work we do there." },
     ],
   }),
@@ -45,7 +45,7 @@ function GalleryPage() {
         <SectionHeading
           eyebrow="The studio"
           title="Gallery"
-          subtitle="Our space, our people, and the work that leaves the chair."
+          subtitle="A glimpse into our space, our craft and the looks we love creating."
           align="center"
         />
 

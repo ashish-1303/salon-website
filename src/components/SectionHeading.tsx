@@ -26,7 +26,7 @@ export function SectionHeading({
       className={cn(align === "center" && "text-center mx-auto max-w-2xl", className)}
     >
       {eyebrow ? (
-        <span className="inline-flex items-center rounded-full bg-sage/50 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-ink/70">
+        <span className="inline-flex items-center rounded-full bg-lilac/40 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-dark">
           {eyebrow}
         </span>
       ) : null}

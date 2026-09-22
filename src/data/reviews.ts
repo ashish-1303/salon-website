@@ -3,7 +3,7 @@ import type { Review } from "@/types";
 export const reviews: Review[] = [
   {
     id: "r1",
-    name: "Mira Alston",
+    name: "Mihir Panchal",
     rating: 5,
     text: "The softest, most thoughtful salon experience I've ever had. My color has never looked this dimensional.",
     service: "Color & Highlights",
@@ -11,25 +11,25 @@ export const reviews: Review[] = [
   },
   {
     id: "r2",
-    name: "Devin Kapoor",
-    rating: 5,
+    name: "Devam Parmar",
+    rating: 4,
     text: "First place that actually listened before picking up the scissors. The hot towel shave alone is worth the trip.",
     service: "Beard & Shave",
     featured: true,
   },
   {
     id: "r3",
-    name: "Priya Sethi",
+    name: "Priya Shah",
     rating: 5,
-    text: "Booked a bridal trial and left teary. They matched my skin perfectly and nothing budged for fourteen hours.",
+    text: "Booked a bridal trial and they matched my skin perfectly.",
     service: "Bridal Makeup",
     featured: true,
   },
   {
     id: "r4",
-    name: "Tomas Herrera",
+    name: "Aarav Patel",
     rating: 4,
-    text: "Calm, plant-filled and never rushed. My cut has grown out beautifully over six weeks.",
+    text: "My haircut was very good and liked by everybody",
     service: "Haircut",
   },
   {
@@ -41,23 +41,9 @@ export const reviews: Review[] = [
   },
   {
     id: "r6",
-    name: "Jonah Feldman",
-    rating: 5,
-    text: "Head massage after a brutal work week — I nearly fell asleep in the chair. Rebooked on the spot.",
-    service: "Head Massage",
-  },
-  {
-    id: "r7",
-    name: "Lena Novak",
+    name: "Jeet Mishra",
     rating: 4,
-    text: "Lovely manicure, and they were honest that my nails needed a rest week. Appreciated the candour.",
-    service: "Manicure & Pedicure",
-  },
-  {
-    id: "r8",
-    name: "Samir Odili",
-    rating: 5,
-    text: "Genuinely unisex — my partner and I book back to back and both leave thrilled.",
-    service: "Haircut & Styling",
-  },
+    text: "Head massage after a brutal work week — I nearly fell asleep in the chair.",
+    service: "Head Massage",
+  }
 ];

@@ -14,13 +14,13 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Bookings — Verve & Balm Salon" },
+      { title: "Contact & Bookings — Glow & Grace Salon" },
       {
         name: "description",
         content:
-          "Find our address, opening hours and phone number, or send an enquiry to book your appointment at Verve & Balm.",
+          "Find our address, opening hours and phone number, or send an enquiry to book your appointment at Glow & Grace.",
       },
-      { property: "og:title", content: "Contact & Bookings — Verve & Balm Salon" },
+      { property: "og:title", content: "Contact & Bookings — Glow & Grace Salon" },
       { property: "og:description", content: "Visit us, call us, or send a booking enquiry." },
     ],
   }),
@@ -54,8 +54,8 @@ function ContactPage() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Say hello"
-          title="Visit or book with us"
-          subtitle="Walk-ins welcome when we have a chair free — enquire ahead to be sure."
+          title="Ready for Your Next Look?"
+          subtitle="Get in touch with us for appointments, enquiries or any questions about our services."
           align="center"
         />
 

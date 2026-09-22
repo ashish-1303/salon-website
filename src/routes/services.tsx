@@ -11,16 +11,16 @@ import type { ServiceCategory } from "@/types";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services & Prices — Verve & Balm Salon" },
+      { title: "Services — Glow & Grace Salon" },
       {
         name: "description",
         content:
-          "Haircuts, colour, facials, waxing, spa and bridal services for men and women, with clear prices and durations.",
+          "Haircuts, colour, facials, waxing, spa and bridal services for men and women at Glow & Grace.",
       },
-      { property: "og:title", content: "Services & Prices — Verve & Balm Salon" },
+      { property: "og:title", content: "Services — Glow & Grace Salon" },
       {
         property: "og:description",
-        content: "Browse our full menu for men and women, with prices and appointment lengths.",
+        content: "Browse our full menu for men and women.",
       },
     ],
   }),

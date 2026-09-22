@@ -80,8 +80,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Verve & Balm — Unisex Salon" },
-      { name: "description", content: "A calm, sunlit unisex hair and beauty salon." },
+      { title: "Glow & Grace — Unisex Salon" },
+      { name: "description", content: "Premium unisex hair and beauty salon in Mumbai. Book your appointment at Glow & Grace." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

@@ -5,12 +5,12 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full font-bold transition-all duration-300 disabled:pointer-events-none disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark focus-visible:ring-offset-2 focus-visible:ring-offset-cream [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 rounded-full font-bold transition-all duration-300 disabled:pointer-events-none disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark focus-visible:ring-offset-2 focus-visible:ring-offset-background [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         primary:
-          "bg-brand text-white shadow-[0_14px_30px_-10px_rgba(232,143,94,0.9)] hover:bg-brand-dark hover:-translate-y-0.5",
+          "bg-brand text-white shadow-[0_14px_30px_-10px_rgba(180,0,100,0.6)] hover:bg-brand-dark hover:-translate-y-0.5",
         soft: "border border-ink/15 bg-white text-ink/80 hover:bg-white/60 hover:-translate-y-0.5",
         ghost: "text-ink/70 hover:text-ink",
         // shadcn-compatible variants (used by generated ui primitives)
