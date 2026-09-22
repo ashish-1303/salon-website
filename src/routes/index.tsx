@@ -83,12 +83,8 @@ function HomePage() {
               />
             </div>
             <div className="absolute -bottom-5 left-2 sm:-left-4 rounded-2xl bg-white px-5 py-3 shadow-[0_18px_35px_-18px_rgba(100,50,120,0.3)] flex items-center gap-3">
-              <span className="size-10 rounded-full bg-lilac grid place-items-center text-brand-dark font-display font-bold">
-                5★
-              </span>
               <span className="text-sm">
-                <span className="block font-bold">Loved by all</span>
-                <span className="block text-ink/60">For men &amp; women</span>
+                <span className="block text-gray-600">For men &amp; women</span>
               </span>
             </div>
           </motion.div>
@@ -117,7 +113,7 @@ function HomePage() {
 
       {/* Why choose us + reviews preview */}
       <section className="px-4 py-8">
-        <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-6">
+        <div className="mx-auto max-w-6xl gap-6">
           <Reveal className="h-full">
             <div className="h-full rounded-[2rem] bg-gradient-to-br from-brand/90 to-brand-dark p-8 text-white shadow-[0_24px_50px_-24px_rgba(180,0,100,0.5)]">
               <h2 className="font-display font-bold text-3xl">Why {salon.name}</h2>
@@ -131,7 +127,7 @@ function HomePage() {
               </ul>
             </div>
           </Reveal>
-          {featuredReviews[0] ? <ReviewCard review={featuredReviews[0]} className="h-full" /> : null}
+          {/* {featuredReviews[0] ? <ReviewCard review={featuredReviews[0]} className="h-full" /> : null} */}
         </div>
       </section>
 
