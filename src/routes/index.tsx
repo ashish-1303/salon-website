@@ -82,11 +82,6 @@ function HomePage() {
                 className="w-full aspect-[4/5] rounded-[2rem] object-cover"
               />
             </div>
-            <div className="absolute -bottom-5 left-2 sm:-left-4 rounded-2xl bg-white px-5 py-3 shadow-[0_18px_35px_-18px_rgba(100,50,120,0.3)] flex items-center gap-3">
-              <span className="text-sm">
-                <span className="block text-gray-600">For men &amp; women</span>
-              </span>
-            </div>
           </motion.div>
         </div>
       </section>
