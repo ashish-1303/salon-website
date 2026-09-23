@@ -22,7 +22,7 @@ export const services: Service[] = [
     name: "Beard Trim & Shave",
     description: "Hot towel, straight razor finish and a clean, precise line.",
     category: "men",
-    imageUrl: img("photo-1621607512214-68297480165e"),
+    imageUrl: "../../../public/men-beard-trim.jpg",
     featured: true,
   },
   {
@@ -37,21 +37,21 @@ export const services: Service[] = [
     name: "Head Massage",
     description: "Warm oil pressure-point massage to unwind the scalp.",
     category: "men",
-    imageUrl: serviceHairSpa,
+    imageUrl: "../../../public/men-head-massage.avif",
   },
   {
     id: "m-facial",
     name: "Facial",
     description: "Deep cleanse, exfoliation and hydration for all skin types.",
     category: "men",
-    imageUrl: serviceFacial,
+    imageUrl: "../../../public/men-facial.jpg",
   },
   {
     id: "m-hair-spa",
     name: "Hair Spa",
     description: "Restorative scalp and strand treatment with a steam finish.",
     category: "men",
-    imageUrl: serviceHairSpa,
+    imageUrl: "/men-hair-spa.jpg",
   },
 
   // ---- For Women ----

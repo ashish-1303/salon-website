@@ -7,9 +7,8 @@ export const salonInfo: SalonInfo = {
   phone: "+91 9876543210",
   email: "glowandgrace@gmail.com",
   mapEmbedUrl:
-    "https://www.google.com/maps?q=Bandra%20West%2C%20Mumbai&output=embed",
+    "https://www.google.com/maps?q=AkSalonNaranpura,Ahmedabad-13&output=embed",
   hours: [
-    { day: "Monday - Saturday", time: "10:00 am - 8:00 pm" },
-    { day: "Sunday", time: "10:00 am - 9:00 pm" },
+    { day: "Monday - Sunday", time: "10:00 am - 9:00 pm" },
   ],
 };

@@ -96,7 +96,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,700;6..12,800&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      {
+        rel: "icon",
+        href: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23f472b6" /><stop offset="100%" stop-color="%23831843" /></linearGradient></defs><rect width="100" height="100" rx="50" fill="url(%23pinkGrad)"/><text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="60" font-family="sans-serif" font-weight="bold" fill="%23ffffff">G</text></svg>',
+        type: "image/svg+xml",
+      },
     ],
   }),
   shellComponent: RootShell,
