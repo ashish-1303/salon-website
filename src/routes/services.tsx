@@ -41,7 +41,7 @@ function ServicesPage() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="The full menu"
-          title="Services & prices"
+          title="What We Offer"
           subtitle="Every treatment includes a consultation — no surprises at the counter."
           align="center"
         />

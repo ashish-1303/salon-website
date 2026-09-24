@@ -90,7 +90,7 @@ function HomePage() {
       <section className="px-4 py-14">
         <div className="mx-auto max-w-6xl">
           <div className="flex items-end justify-between gap-4 mb-7">
-            <SectionHeading title="Our Services" subtitle="Everything you need to refresh your look and feel your best." />
+            <SectionHeading title="Explore Our Services" subtitle="Everything you need to refresh your look and feel your best." />
             <Link
               to="/services"
               className="hidden sm:block shrink-0 rounded-full bg-white px-4 py-2 text-sm font-bold text-ink/70 border border-ink/10 hover:bg-white/60 transition-colors"
