@@ -22,7 +22,7 @@ export const services: Service[] = [
     name: "Beard Trim & Shave",
     description: "Hot towel, straight razor finish and a clean, precise line.",
     category: "men",
-    imageUrl: "../../../public/men-beard-trim.jpg",
+    imageUrl: "/men-beard-trim.jpg",
     featured: true,
   },
   {
@@ -37,14 +37,14 @@ export const services: Service[] = [
     name: "Head Massage",
     description: "Warm oil pressure-point massage to unwind the scalp.",
     category: "men",
-    imageUrl: "../../../public/men-head-massage.avif",
+    imageUrl: "/men-head-massage.avif",
   },
   {
     id: "m-facial",
     name: "Facial",
     description: "Deep cleanse, exfoliation and hydration for all skin types.",
     category: "men",
-    imageUrl: "../../../public/men-facial.jpg",
+    imageUrl: "/men-facial.jpg",
   },
   {
     id: "m-hair-spa",
