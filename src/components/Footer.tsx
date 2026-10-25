@@ -39,8 +39,8 @@ export function Footer() {
         </div>
 
         <p className="mt-7 max-w-3xl border-t border-border pt-5 text-sm leading-6 text-muted-foreground">
-          {salon.address} <span aria-hidden="true">·</span> {salon.phone} <span aria-hidden="true">·</span> {salon.hours[0]?.day}{" "}
-          {salon.hours[0]?.time}
+          {salon.address} <span aria-hidden="true">&nbsp;</span> {salon.phone} <span aria-hidden="true">&nbsp;</span> {salon.hours[0]?.day}{" "}
+          [{salon.hours[0]?.time}]
         </p>
       </div>
     </footer>

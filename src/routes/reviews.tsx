@@ -32,7 +32,7 @@ function ReviewsPage() {
         <SectionHeading
           eyebrow="In their words"
           title="Client reviews"
-          subtitle="Sample testimonials for preview only. Replace with salon-approved reviews before publishing."
+          subtitle="A little love from our clients"
           align="center"
         />
 

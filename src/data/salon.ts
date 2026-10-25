@@ -3,7 +3,7 @@ import type { SalonInfo } from "@/types";
 export const salonInfo: SalonInfo = {
   name: "AK Salon",
   tagline: "Where style is sculpted with softness.",
-  address: "1st Floor, Binali Complex, Naranpura, Ahmedabad-380013, Gujarat",
+  address: "1st Floor, Binali Complex, Naranpura, Ahmedabad-380013",
   phone: "+91 9876543210",
   email: "hello@aksalon.com",
   mapEmbedUrl:

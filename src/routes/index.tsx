@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { MapPin, Scissors, Sparkles } from "lucide-react";
+import { HeartHandshake, MapPin, Sparkles, UserRound } from "lucide-react";
 
 import salonInterior from "@/assets/salon-interior.jpg";
 import { ReviewCard } from "@/components/ReviewCard";
@@ -37,9 +37,24 @@ export const Route = createFileRoute("/")({
 });
 
 const WHY_US = [
-  { Icon: Scissors, text: "Haircuts, styling and colour" },
-  { Icon: Sparkles, text: "Skin and self-care services" },
-  { Icon: MapPin, text: "Located in Naranpura, Ahmedabad" },
+  {
+    Icon: UserRound,
+    title: "Personalised Attention",
+    description:
+      "Services tailored to your preferences, style, and individual needs.",
+  },
+  {
+    Icon: Sparkles,
+    title: "A Style That Feels Like You",
+    description:
+      "Thoughtful styling focused on helping you feel confident in your look.",
+  },
+  {
+    Icon: HeartHandshake,
+    title: "A Welcoming Experience",
+    description:
+      "A friendly, comfortable salon experience with attention to your needs.",
+  },
 ] as const;
 
 function HomePage() {
@@ -62,11 +77,10 @@ function HomePage() {
               Naranpura, Ahmedabad
             </span>
             <h1 className="mt-5 max-w-xl font-display text-5xl font-semibold leading-[0.98] text-foreground sm:text-6xl lg:text-7xl">
-              A little more care. <span className="text-primary">A lot more you.</span>
+             Where your style <span className="text-primary">comes to life</span>
             </h1>
             <p className="mt-5 max-w-lg text-base leading-7 text-muted-foreground sm:text-lg">
-              Hair, skin and grooming, thoughtfully brought together at AK Salon.
-              Find your next everyday refresh in Naranpura.
+             Explore hair, skin and grooming services designed around your preferences and personal style.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <Button asChild size="lg" className="min-h-12 px-7">
@@ -115,8 +129,8 @@ function HomePage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-7 flex items-end justify-between gap-4">
             <SectionHeading
-              title="Signature rituals"
-              subtitle="A taste of what our stylists do best."
+              title="Find Your Perfect Style"
+              subtitle="Explore our services and discover a look that feels uniquely yours."
             />
             <Link
               to="/services"
@@ -142,12 +156,20 @@ function HomePage() {
                 Why {salon.name}
               </h2>
               <ul className="mt-6 space-y-5">
-                {WHY_US.map(({ Icon, text }) => (
-                  <li key={text} className="flex gap-3 items-start">
-                    <Icon className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
-                    <span className="font-medium text-foreground">
-                      {text}
-                    </span>
+                {WHY_US.map(({ Icon, title, description }) => (
+                  <li key={title} className="flex items-start gap-3">
+                    <Icon
+                      className="mt-0.5 size-5 shrink-0 text-primary"
+                      aria-hidden="true"
+                    />
+                    <div className="min-w-0">
+                      <h3 className="font-semibold leading-6 text-foreground">
+                        {title}
+                      </h3>
+                      <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                        {description}
+                      </p>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -164,7 +186,7 @@ function HomePage() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             title="What people say"
-            subtitle="Sample testimonials for preview only. Replace with salon-approved reviews before publishing."
+            subtitle="A little love from our clients."
             className="mb-7"
           />
           <div className="grid md:grid-cols-3 gap-5">

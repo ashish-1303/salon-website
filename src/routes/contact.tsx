@@ -59,7 +59,7 @@ function ContactPage() {
         <SectionHeading
           eyebrow="Say hello"
           title="Let's Create Your Perfect Look"
-          subtitle="Find us in Naranpura or use the contact details below."
+          subtitle="Connect with us to plan your next salon experience"
           align="center"
         />
 
