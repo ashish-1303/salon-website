@@ -14,19 +14,19 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Bookings — AK Salon" },
+      { title: "Contact — AK Salon" },
       {
         name: "description",
         content:
-          "Find our address, opening hours and phone number, or send an enquiry to book your appointment at AK Salon.",
+          "Find AK Salon in Naranpura, Ahmedabad, or get in touch with the salon.",
       },
       {
         property: "og:title",
-        content: "Contact & Bookings — AK Salon",
+        content: "Contact — AK Salon",
       },
       {
         property: "og:description",
-        content: "Visit us, call us, or send a booking enquiry.",
+        content: "Find our location and contact details.",
       },
     ],
   }),
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const inputClass =
-  "w-full rounded-2xl border border-input bg-background/60 px-4 py-3 text-foreground placeholder:text-muted-foreground outline-none transition-colors focus:border-primary focus:bg-background";
+  "min-h-12 w-full rounded-xl border border-input bg-white px-4 py-3 text-foreground placeholder:text-muted-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/15";
 
 function ContactPage() {
   const salon = getSalonInfo();
@@ -48,10 +48,8 @@ function ContactPage() {
     defaultValues: { name: "", phone: "", message: "" },
   });
 
-  const onSubmit = (values: EnquiryFormValues) => {
-    // MVP: no backend yet — log and confirm to the visitor.
-    console.info("Enquiry submitted", values);
-    toast.success("Thanks! We'll call you back shortly to confirm your slot.");
+  const onSubmit = () => {
+    toast.success("Demo only: your enquiry was not sent. Please contact the salon directly.");
     reset();
   };
 
@@ -60,22 +58,22 @@ function ContactPage() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Say hello"
-          title="Visit or book with us"
-          subtitle="Walk-ins welcome when we have a chair free — enquire ahead to be sure."
+          title="Let's Create Your Perfect Look"
+          subtitle="Find us in Naranpura or use the contact details below."
           align="center"
         />
 
-        <div className="mt-10 grid lg:grid-cols-2 gap-6">
+        <div className="mt-9 grid gap-6 lg:grid-cols-2">
           <Reveal>
-            <div className="rounded-[2rem] bg-card p-7 sm:p-8 border border-border shadow-2xl">
-              <h3 className="font-display font-bold text-2xl">{salon.name}</h3>
+            <div className="rounded-2xl border border-border bg-white p-6 shadow-sm sm:p-8">
+              <h3 className="font-display text-3xl font-semibold text-foreground">{salon.name}</h3>
               <ul className="mt-6 space-y-5 text-muted-foreground">
                 <li className="flex gap-3">
-                  <MapPin className="size-5 shrink-0 text-brand-dark" />
+                  <MapPin className="size-5 shrink-0 text-primary" aria-hidden="true" />
                   <span>{salon.address}</span>
                 </li>
                 <li className="flex gap-3">
-                  <Phone className="size-5 shrink-0 text-brand-dark" />
+                  <Phone className="size-5 shrink-0 text-primary" aria-hidden="true" />
                   <a
                     href={`tel:${salon.phone.replace(/[^0-9+]/g, "")}`}
                     className="hover:text-foreground"
@@ -84,7 +82,7 @@ function ContactPage() {
                   </a>
                 </li>
                 <li className="flex gap-3">
-                  <Mail className="size-5 shrink-0 text-brand-dark" />
+                  <Mail className="size-5 shrink-0 text-primary" aria-hidden="true" />
                   <a
                     href={`mailto:${salon.email}`}
                     className="hover:text-foreground"
@@ -93,7 +91,7 @@ function ContactPage() {
                   </a>
                 </li>
                 <li className="flex gap-3">
-                  <Clock className="size-5 shrink-0 text-brand-dark" />
+                  <Clock className="size-5 shrink-0 text-primary" aria-hidden="true" />
                   <span className="space-y-1">
                     {salon.hours.map((h) => (
                       <span key={h.day} className="flex flex-wrap gap-x-2">
@@ -107,7 +105,7 @@ function ContactPage() {
                 </li>
               </ul>
 
-              <div className="mt-7 overflow-hidden rounded-3xl border border-ink/10">
+              <div className="mt-7 overflow-hidden rounded-2xl border border-border">
                 <iframe
                   title={`Map showing ${salon.name}`}
                   src={salon.mapEmbedUrl}
@@ -123,20 +121,20 @@ function ContactPage() {
             <form
               onSubmit={handleSubmit(onSubmit)}
               noValidate
-              className="rounded-[2rem] bg-gradient-to-br from-primary to-accent p-7 sm:p-8 text-primary-foreground shadow-2xl"
+              className="rounded-2xl border border-border bg-accent/40 p-6 text-foreground sm:p-8"
             >
-              <h3 className="font-display font-bold text-2xl">
+              <h3 className="font-display text-3xl font-semibold">
                 Send an enquiry
               </h3>
-              <p className="mt-2 text-primary-foreground/80">
-                We reply within a few hours during opening times.
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                This demo form is not connected yet. No message will be sent.
               </p>
 
               <div className="mt-6 space-y-5">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-bold mb-2"
+                    className="mb-2 block text-sm font-semibold text-foreground"
                   >
                     Name
                   </label>
@@ -145,10 +143,12 @@ function ContactPage() {
                     {...register("name")}
                     placeholder="Your full name"
                     aria-invalid={!!errors.name}
-                    className={cn(inputClass, errors.name && "border-white")}
+                    aria-describedby={errors.name ? "name-error" : undefined}
+                    autoComplete="name"
+                    className={cn(inputClass, errors.name && "border-destructive")}
                   />
                   {errors.name ? (
-                    <p className="mt-1.5 text-sm font-semibold text-white">
+                    <p id="name-error" className="mt-1.5 text-sm font-semibold text-destructive">
                       {errors.name.message}
                     </p>
                   ) : null}
@@ -157,7 +157,7 @@ function ContactPage() {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-bold mb-2"
+                    className="mb-2 block text-sm font-semibold text-foreground"
                   >
                     Phone
                   </label>
@@ -167,10 +167,12 @@ function ContactPage() {
                     {...register("phone")}
                     placeholder="e.g. +91 98200 12345"
                     aria-invalid={!!errors.phone}
-                    className={cn(inputClass, errors.phone && "border-white")}
+                    aria-describedby={errors.phone ? "phone-error" : undefined}
+                    autoComplete="tel"
+                    className={cn(inputClass, errors.phone && "border-destructive")}
                   />
                   {errors.phone ? (
-                    <p className="mt-1.5 text-sm font-semibold text-white">
+                    <p id="phone-error" className="mt-1.5 text-sm font-semibold text-destructive">
                       {errors.phone.message}
                     </p>
                   ) : null}
@@ -179,7 +181,7 @@ function ContactPage() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-bold mb-2"
+                    className="mb-2 block text-sm font-semibold text-foreground"
                   >
                     Message
                   </label>
@@ -189,14 +191,15 @@ function ContactPage() {
                     {...register("message")}
                     placeholder="Which service, and when suits you?"
                     aria-invalid={!!errors.message}
+                    aria-describedby={errors.message ? "message-error" : undefined}
                     className={cn(
                       inputClass,
                       "resize-none",
-                      errors.message && "border-white",
+                      errors.message && "border-destructive",
                     )}
                   />
                   {errors.message ? (
-                    <p className="mt-1.5 text-sm font-semibold text-destructive-foreground">
+                    <p id="message-error" className="mt-1.5 text-sm font-semibold text-destructive">
                       {errors.message.message}
                     </p>
                   ) : null}

@@ -24,25 +24,25 @@ export function SectionHeading({
       viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
       className={cn(
-        align === "center" && "text-center mx-auto max-w-2xl",
+        align === "center" && "mx-auto max-w-2xl text-center",
         className,
       )}
     >
       {eyebrow ? (
-        <span className="inline-flex items-center rounded-full bg-secondary/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-secondary">
+        <span className="inline-flex items-center rounded-full bg-secondary px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-secondary-foreground">
           {eyebrow}
         </span>
       ) : null}
       <h2
         className={cn(
-          "font-display font-bold text-3xl sm:text-4xl",
+          "font-display text-4xl font-semibold leading-tight text-foreground sm:text-5xl",
           eyebrow && "mt-4",
         )}
       >
         {title}
       </h2>
       {subtitle ? (
-        <p className="mt-2 text-muted-foreground">{subtitle}</p>
+        <p className="mt-3 text-base leading-7 text-muted-foreground sm:text-lg">{subtitle}</p>
       ) : null}
     </motion.div>
   );

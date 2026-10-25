@@ -19,30 +19,30 @@ export function Navbar() {
   const salon = getSalonInfo();
 
   return (
-    <header className="sticky top-0 z-50 px-4 pt-4">
-      <nav className="mx-auto max-w-6xl rounded-3xl md:rounded-full bg-background/80 backdrop-blur-md px-5 py-3 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.4)] border border-border">
+    <header className="sticky top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4">
+      <nav className="mx-auto max-w-6xl rounded-full border border-border/80 bg-background/95 px-4 py-2.5 shadow-[0_8px_28px_-20px_rgba(20,30,55,0.32)] backdrop-blur-xl sm:px-6">
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="flex items-center gap-2"
+            className="flex min-w-0 items-center gap-2.5"
             onClick={() => setOpen(false)}
           >
-            <span className="size-9 rounded-full bg-gradient-to-br from-primary to-accent grid place-items-center text-primary-foreground font-display font-bold text-lg shadow-inner">
+            <span className="grid size-9 shrink-0 place-items-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
               AK
             </span>
-            <span className="font-display font-semibold text-lg tracking-tight">
+            <span className="truncate font-display text-xl font-semibold text-foreground sm:text-2xl">
               {salon.name}
             </span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-7 text-sm font-semibold text-muted-foreground">
+          <div className="hidden items-center gap-6 text-sm font-medium text-muted-foreground md:flex">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 activeOptions={{ exact: link.to === "/" }}
-                activeProps={{ className: "text-brand-dark" }}
-                className="hover:text-foreground transition-colors"
+                activeProps={{ className: "text-primary" }}
+                className="transition-colors hover:text-primary focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 {link.label}
               </Link>
@@ -58,7 +58,7 @@ export function Navbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden size-10 rounded-full border border-border grid place-items-center text-foreground"
+            className="grid size-11 place-items-center rounded-full border border-border text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"
           >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
@@ -71,7 +71,7 @@ export function Navbar() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.28, ease: [0.2, 0.8, 0.2, 1] }}
-              className="md:hidden overflow-hidden"
+              className="overflow-hidden md:hidden"
             >
               <div className="pt-4 pb-1 flex flex-col gap-1">
                 {NAV_LINKS.map((link) => (
@@ -81,7 +81,7 @@ export function Navbar() {
                     activeOptions={{ exact: link.to === "/" }}
                     activeProps={{ className: "text-primary bg-secondary" }}
                     onClick={() => setOpen(false)}
-                    className="rounded-2xl px-4 py-3 text-sm font-semibold text-muted-foreground hover:bg-secondary/50"
+                    className="min-h-11 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
                     {link.label}
                   </Link>

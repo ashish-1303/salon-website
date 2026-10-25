@@ -52,7 +52,7 @@ function GalleryPage() {
           align="center"
         />
 
-        <div className="mt-10 columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:_balance]">
+        <div className="mt-9 columns-1 gap-4 sm:columns-2 sm:gap-5 lg:columns-3">
           {images.map((image, i) => (
             <motion.button
               key={image.id}
@@ -62,16 +62,16 @@ function GalleryPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.5, delay: Math.min(i * 0.04, 0.3) }}
-              whileHover={{ y: -4 }}
-              className="mb-5 block w-full overflow-hidden rounded-3xl border border-border bg-card shadow-xl group"
+              whileHover={{ y: -2 }}
+              className="group mb-4 block w-full overflow-hidden rounded-2xl border border-border bg-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:mb-5"
             >
               <img
                 src={image.src}
                 alt={image.alt}
                 loading="lazy"
                 className={cn(
-                  "w-full object-cover transition-transform duration-700 group-hover:scale-105",
-                  image.tall ? "aspect-[3/4]" : "aspect-[4/3]",
+                  "w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]",
+                  image.tall ? "aspect-3/4" : "aspect-4/3",
                 )}
               />
             </motion.button>
@@ -89,7 +89,7 @@ function GalleryPage() {
             role="dialog"
             aria-modal="true"
             aria-label={active.alt}
-            className="fixed inset-0 z-100 grid place-items-center bg-ink/80 backdrop-blur-sm p-4"
+            className="fixed inset-0 z-100 grid place-items-center bg-foreground/85 p-4 backdrop-blur-sm"
           >
             <motion.img
               initial={{ scale: 0.94, opacity: 0 }}
@@ -105,11 +105,11 @@ function GalleryPage() {
               type="button"
               onClick={close}
               aria-label="Close image"
-              className="absolute right-5 top-5 size-11 rounded-full bg-card/90 text-foreground grid place-items-center hover:bg-card transition-colors"
+              className="absolute right-4 top-4 grid size-11 place-items-center rounded-full bg-white text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:right-6 sm:top-6"
             >
               <X className="size-5" />
             </button>
-            <p className="absolute bottom-6 left-0 right-0 text-center text-sm text-cream/80 px-6">
+            <p className="absolute bottom-5 left-0 right-0 px-6 text-center text-sm text-white sm:bottom-6">
               {active.alt}
             </p>
           </motion.div>

@@ -5181,7 +5181,7 @@ function Zn() {
       children: [
         (0, $.jsx)(l, {
           eyebrow: `Say hello`,
-          title: `Visit or book with us`,
+          title: `Let’s Create Your Perfect Look`,
           subtitle: `Walk-ins welcome when we have a chair free — enquire ahead to be sure.`,
           align: `center`,
         }),

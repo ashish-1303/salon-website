@@ -19,8 +19,8 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
         delay: Math.min(index * 0.06, 0.3),
         ease: [0.2, 0.8, 0.2, 1],
       }}
-      whileHover={{ y: -6 }}
-      className="group overflow-hidden rounded-3xl bg-card border border-border shadow-2xl"
+      whileHover={{ y: -3 }}
+      className="group overflow-hidden rounded-2xl border border-border bg-card shadow-[0_12px_34px_-28px_rgba(20,30,55,0.42)] transition-shadow hover:shadow-[0_18px_42px_-30px_rgba(20,30,55,0.42)]"
     >
       <div className="overflow-hidden">
         <img
@@ -29,12 +29,12 @@ export function ServiceCard({ service, index = 0 }: ServiceCardProps) {
           loading="lazy"
           width={800}
           height={600}
-          className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
+          className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
         />
       </div>
-      <div className="p-5">
-        <h3 className="font-display font-semibold text-xl">{service.name}</h3>
-        <p className="mt-1 text-sm text-muted-foreground">
+      <div className="p-5 sm:p-6">
+        <h3 className="font-display text-2xl font-semibold leading-tight text-foreground">{service.name}</h3>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">
           {service.description}
         </p>
 

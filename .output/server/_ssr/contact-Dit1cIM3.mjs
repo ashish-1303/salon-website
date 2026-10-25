@@ -58,7 +58,7 @@ function ContactPage() {
       children: [
         /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
           eyebrow: "Say hello",
-          title: "Visit or book with us",
+          title: "Let’s Create Your Perfect Look",
           subtitle:
             "Walk-ins welcome when we have a chair free — enquire ahead to be sure.",
           align: "center",

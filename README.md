@@ -1,10 +1,10 @@
-# Salon Website
+# AK Salon Website
 
-Build an MVP for a modern, responsive salon website for a unisex salon (services for both men and women).
+Responsive salon website for AK Salon in Naranpura, Ahmedabad.
 
-1. TECH STACK: Next.js (App Router) + TypeScript + Tailwind CSS + Framer Motion (for animations/transitions) + Lucide React (for icons). Do not set up a database or backend yet — use local typed TypeScript data files (e.g. /data/services.ts, /data/reviews.ts) as the data source for this MVP; keep the data layer cleanly separated so it can be swapped for a real backend later without touching UI components.
+The app uses React 19, TypeScript, TanStack Start/Router, Vite, Tailwind CSS 4, Framer Motion, and Lucide React. Content is stored in typed local data files behind accessor functions. There is no connected backend or booking integration.
 
-2. PAGES (MVP scope only): Home, Services, Gallery, Reviews, Contact Us. Use Next.js App Router file-based routing (/app/services/page.tsx, etc.) with a shared Navbar and Footer layout component across all pages.
+2. PAGES: Home, Services, Gallery, Reviews, and Contact are implemented as TanStack file routes in `src/routes/`, with shared Navbar and Footer components.
 
 3. HOME PAGE: Hero section with salon name, tagline, and a prominent "Book Appointment" CTA button; a short highlights section showing 3-4 featured services with icons/images; a preview of top 3 customer reviews; a brief "Why choose us" section; a footer with quick links, contact info, and social icons.
 
@@ -20,7 +20,7 @@ Build an MVP for a modern, responsive salon website for a unisex salon (services
 
 6. REVIEWS PAGE: Display customer testimonials as cards with a star rating, customer name, and short review text. Use a responsive grid or a horizontal scroll/carousel on mobile. Include 6-8 realistic sample reviews as placeholder data.
 
-7. CONTACT US PAGE: Salon address, phone number, opening hours, and an embedded Google Map (iframe). Include a simple enquiry form (name, phone, message) with client-side validation using Zod + React Hook Form. On submit, just log/show a success message for now (no backend wiring yet).
+7. CONTACT PAGE: Displays salon contact details, opening hours, and a Google Maps iframe. The enquiry form uses client-side validation with Zod and React Hook Form. It currently provides demo-only feedback; it does not deliver messages or book appointments.
 
 8. UI/UX REQUIREMENTS: Modern, clean, visually attractive design similar to contemporary salon/beauty industry websites — soft color palette (e.g. warm neutrals, soft pinks/golds, or elegant black-and-gold), good use of whitespace, clear visual hierarchy, and smooth Framer Motion animations (fade-ins, scroll reveals, hover scale effects on cards/buttons). Avoid generic template look — should feel premium and intentional.
 
@@ -46,23 +46,11 @@ Build an MVP for a modern, responsive salon website for a unisex salon (services
 
 12. FUTURE-PROOFING NOTE: Structure the data-fetching logic (even though it's static for now) behind simple functions like getServices() or getReviews() in /lib, so that swapping in a real database or CMS later only requires changing those functions, not the UI components that consume them.
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/180525d2-8a50-45ed-97ec-a47ef525fbb5).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requires Node.js and npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```

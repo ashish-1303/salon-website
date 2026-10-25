@@ -11,7 +11,7 @@ export const Route = createFileRoute("/reviews")({
       {
         name: "description",
         content:
-          "Read honest reviews from AK Salon clients on cuts, colour, shaves, facials and bridal makeup.",
+          "Sample review content shown for AK Salon website preview.",
       },
       { property: "og:title", content: "Client Reviews — AK Salon" },
       {
@@ -32,12 +32,12 @@ function ReviewsPage() {
         <SectionHeading
           eyebrow="In their words"
           title="Client reviews"
-          subtitle="Unedited notes from the people who keep coming back."
+          subtitle="Sample testimonials for preview only. Replace with salon-approved reviews before publishing."
           align="center"
         />
 
         {/* Mobile: horizontal scroll. Tablet and up: grid. */}
-        <div className="mt-10 -mx-4 px-4 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-5 sm:overflow-visible sm:pb-0">
+        <div className="-mx-4 mt-9 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3">
           {reviews.map((review, i) => (
             <ReviewCard
               key={review.id}

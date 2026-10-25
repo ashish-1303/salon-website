@@ -53,17 +53,47 @@ function ServicesPage() {
         <div
           role="tablist"
           aria-label="Service categories"
-          className="mx-auto mt-8 flex w-fit items-center gap-1 rounded-full bg-card p-1.5 border border-border shadow-2xl"
+          className="mx-auto mt-8 flex w-full max-w-sm items-center gap-1 rounded-full border border-border bg-white p-1.5 shadow-sm"
         >
           {CATEGORIES.map((c) => (
             <button
               key={c.value}
               type="button"
               role="tab"
+              id={`service-tab-${c.value}`}
+              aria-controls="service-list"
               aria-selected={category === c.value}
+              tabIndex={category === c.value ? 0 : -1}
               onClick={() => setCategory(c.value)}
+              onKeyDown={(event) => {
+                const currentIndex = CATEGORIES.findIndex(
+                  (item) => item.value === category,
+                );
+                let nextIndex = currentIndex;
+
+                if (event.key === "ArrowRight") {
+                  nextIndex = (currentIndex + 1) % CATEGORIES.length;
+                } else if (event.key === "ArrowLeft") {
+                  nextIndex =
+                    (currentIndex - 1 + CATEGORIES.length) % CATEGORIES.length;
+                } else if (event.key === "Home") {
+                  nextIndex = 0;
+                } else if (event.key === "End") {
+                  nextIndex = CATEGORIES.length - 1;
+                } else {
+                  return;
+                }
+
+                event.preventDefault();
+                const nextCategory = CATEGORIES[nextIndex];
+                if (!nextCategory) return;
+                setCategory(nextCategory.value);
+                document
+                  .getElementById(`service-tab-${nextCategory.value}`)
+                  ?.focus();
+              }}
               className={cn(
-                "relative rounded-full px-6 py-2.5 text-sm font-bold transition-colors",
+                "relative min-h-11 flex-1 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
                 category === c.value
                   ? "text-primary-foreground"
                   : "text-muted-foreground hover:text-foreground",
@@ -81,7 +111,13 @@ function ServicesPage() {
           ))}
         </div>
 
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div
+          id="service-list"
+          role="tabpanel"
+          aria-labelledby={`service-tab-${category}`}
+          tabIndex={0}
+          className="mt-9 grid gap-5 outline-none focus-visible:ring-2 focus-visible:ring-ring sm:grid-cols-2 lg:grid-cols-3"
+        >
           {services.map((service, i) => (
             <ServiceCard key={service.id} service={service} index={i} />
           ))}

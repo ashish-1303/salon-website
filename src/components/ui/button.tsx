@@ -5,14 +5,14 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full font-bold transition-all duration-300 disabled:pointer-events-none disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 disabled:pointer-events-none disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         primary:
-          "bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 hover:-translate-y-0.5",
-        soft: "border border-border bg-card text-card-foreground hover:bg-card/60 hover:-translate-y-0.5",
-        ghost: "text-foreground/70 hover:text-foreground",
+          "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90",
+        soft: "border border-border bg-white text-foreground hover:border-primary/40 hover:bg-muted",
+        ghost: "text-foreground/75 hover:bg-muted hover:text-foreground",
         // shadcn-compatible variants (used by generated ui primitives)
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
         destructive:

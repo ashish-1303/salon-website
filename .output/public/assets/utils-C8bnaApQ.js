@@ -786,13 +786,11 @@ var e = Object.create,
     name: `Glow & Grace`,
     tagline: `Where style is sculpted with softness.`,
     address: `142 Willow Lane, Bandra West, Mumbai 400050`,
-    phone: `(555) 018-2247`,
+    phone: `+91 9876543210`,
     email: `hello@verveandbalm.com`,
     mapEmbedUrl: `https://www.google.com/maps?q=Bandra%20West%2C%20Mumbai&output=embed`,
     hours: [
-      { day: `Monday – Friday`, time: `9:00 am – 7:00 pm` },
-      { day: `Saturday`, time: `9:00 am – 8:00 pm` },
-      { day: `Sunday`, time: `10:00 am – 5:00 pm` },
+      { day: `Monday - Sunday`, time: `10:00 am - 8:00 pm` },
     ],
   };
 function ee(e) {

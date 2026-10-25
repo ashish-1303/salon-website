@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Leaf, Scissors, Sparkles } from "lucide-react";
+import { MapPin, Scissors, Sparkles } from "lucide-react";
 
 import salonInterior from "@/assets/salon-interior.jpg";
 import { ReviewCard } from "@/components/ReviewCard";
@@ -17,20 +17,19 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AK Salon — Unisex Hair & Beauty Salon" },
+      { title: "AK Salon | Hair & Beauty in Naranpura" },
       {
         name: "description",
         content:
-          "A calm, sunlit unisex salon for cuts, colour, facials and spa rituals. Book your appointment at AK Salon.",
+          "Hair, skin and grooming services at AK Salon in Naranpura, Ahmedabad.",
       },
       {
         property: "og:title",
-        content: "AK Salon — Unisex Hair & Beauty Salon",
+        content: "AK Salon | Hair & Beauty in Naranpura",
       },
       {
         property: "og:description",
-        content:
-          "Cuts, colour and care for every face and every gender. Book your chair today.",
+        content: "Explore hair, skin and grooming services at AK Salon.",
       },
     ],
   }),
@@ -38,9 +37,9 @@ export const Route = createFileRoute("/")({
 });
 
 const WHY_US = [
-  { Icon: Scissors, text: "Certified unisex stylists" },
-  { Icon: Leaf, text: "Organic, cruelty-free products" },
-  { Icon: Sparkles, text: "Relaxing, plant-filled space" },
+  { Icon: Scissors, text: "Haircuts, styling and colour" },
+  { Icon: Sparkles, text: "Skin and self-care services" },
+  { Icon: MapPin, text: "Located in Naranpura, Ahmedabad" },
 ] as const;
 
 function HomePage() {
@@ -51,45 +50,35 @@ function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="px-4 pt-10 pb-10">
-        <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+      <section className="px-4 pb-12 pt-10 sm:pb-16 sm:pt-14">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.94fr_1.06fr] lg:gap-14">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
           >
-            <span className="inline-flex items-center rounded-full bg-secondary/20 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-secondary">
-              Unisex hair &amp; beauty studio
+            <span className="inline-flex items-center gap-2 rounded-full bg-secondary px-3.5 py-2 text-xs font-bold uppercase tracking-wider text-secondary-foreground">
+              <MapPin className="size-3.5" aria-hidden="true" />
+              Naranpura, Ahmedabad
             </span>
-            <h1 className="mt-5 font-display font-bold leading-[1.05] text-[2.5rem] sm:text-6xl">
-              Where style is <span className="text-primary">sculpted</span> with
-              softness.
+            <h1 className="mt-5 max-w-xl font-display text-5xl font-semibold leading-[0.98] text-foreground sm:text-6xl lg:text-7xl">
+              A little more care. <span className="text-primary">A lot more you.</span>
             </h1>
-            <p className="mt-5 max-w-md text-lg text-muted-foreground">
-              A calm, sunlit salon for every face and every gender. Cuts, colour
-              and care crafted to feel like a little ritual.
+            <p className="mt-5 max-w-lg text-base leading-7 text-muted-foreground sm:text-lg">
+              Hair, skin and grooming, thoughtfully brought together at AK Salon.
+              Find your next everyday refresh in Naranpura.
             </p>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Button asChild size="lg">
-                <Link to="/contact">Book Appointment</Link>
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <Button asChild size="lg" className="min-h-12 px-7">
+                <Link to="/contact">Send an enquiry</Link>
               </Button>
-              <Button asChild variant="soft" size="lg">
+              <Button asChild variant="soft" size="lg" className="min-h-12 px-7">
                 <Link to="/services">Explore services</Link>
               </Button>
             </div>
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold text-muted-foreground">
-              <span className="flex items-center gap-2">
-                <span className="size-2.5 rounded-full bg-primary" />
-                4.9 rating
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="size-2.5 rounded-full bg-secondary" />
-                12k+ happy clients
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="size-2.5 rounded-full bg-accent" />
-                20 min avg wait
-              </span>
+            <div className="mt-7 flex items-center gap-3 text-sm font-medium text-muted-foreground">
+              <span className="h-px w-8 bg-primary/50" aria-hidden="true" />
+              Hair · skin · grooming
             </div>
           </motion.div>
 
@@ -99,24 +88,22 @@ function HomePage() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
             className="relative"
           >
-            <div className="rounded-[2.5rem] bg-gradient-to-br from-accent/40 via-secondary/40 to-primary/40 p-3 shadow-2xl">
+            <div className="relative overflow-hidden rounded-[2rem] bg-accent p-2.5 sm:rounded-[2.5rem] sm:p-3">
               <img
                 src={salonInterior}
-                alt={`Inside ${salon.name}, a sunlit unisex salon with clay-toned styling chairs`}
+                alt={`Salon interior at ${salon.name}`}
                 width={1024}
                 height={1280}
-                className="w-full aspect-[4/5] rounded-[2rem] object-cover"
+                className="aspect-4/3 w-full rounded-[1.5rem] object-cover sm:aspect-5/4 sm:rounded-[2rem] lg:aspect-4/5"
               />
             </div>
-            <div className="absolute -bottom-5 left-2 sm:-left-4 rounded-2xl bg-card px-5 py-3 shadow-xl flex items-center gap-3">
-              <span className="size-10 rounded-full bg-secondary grid place-items-center text-secondary-foreground font-display font-bold">
-                5★
+            <div className="absolute bottom-5 left-5 flex max-w-[calc(100%-2.5rem)] items-center gap-3 rounded-xl border border-white/70 bg-white/95 px-4 py-3 shadow-lg backdrop-blur-sm sm:bottom-7 sm:left-7">
+              <span className="grid size-9 shrink-0 place-items-center rounded-full bg-secondary text-secondary-foreground">
+                <MapPin className="size-4" aria-hidden="true" />
               </span>
-              <span className="text-sm">
-                <span className="block font-bold">Loved by all</span>
-                <span className="block text-muted-foreground">
-                  For men &amp; women
-                </span>
+              <span className="min-w-0 text-sm">
+                <span className="block font-semibold text-foreground">Visit AK Salon</span>
+                <span className="block truncate text-muted-foreground">Naranpura, Ahmedabad</span>
               </span>
             </div>
           </motion.div>
@@ -124,21 +111,21 @@ function HomePage() {
       </section>
 
       {/* Featured services */}
-      <section className="px-4 py-14">
+      <section className="bg-white px-4 py-14 sm:py-16">
         <div className="mx-auto max-w-6xl">
-          <div className="flex items-end justify-between gap-4 mb-7">
+          <div className="mb-7 flex items-end justify-between gap-4">
             <SectionHeading
               title="Signature rituals"
               subtitle="A taste of what our stylists do best."
             />
             <Link
               to="/services"
-              className="hidden sm:block shrink-0 rounded-full bg-card px-4 py-2 text-sm font-bold text-foreground border border-border hover:bg-card/60 transition-colors"
+              className="hidden shrink-0 rounded-full border border-border bg-white px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/40 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:block"
             >
               View all
             </Link>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {featuredServices.map((service, i) => (
               <ServiceCard key={service.id} service={service} index={i} />
             ))}
@@ -147,18 +134,18 @@ function HomePage() {
       </section>
 
       {/* Why choose us + reviews preview */}
-      <section className="px-4 py-8">
-        <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-6">
+      <section className="px-4 py-14 sm:py-16">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
           <Reveal className="h-full">
-            <div className="h-full rounded-[2rem] bg-gradient-to-br from-card to-background p-8 text-foreground border border-border shadow-2xl">
-              <h2 className="font-display font-bold text-3xl">
+            <div className="h-full rounded-2xl border border-border bg-accent/45 p-7 text-foreground sm:p-9">
+              <h2 className="font-display text-4xl font-semibold">
                 Why {salon.name}
               </h2>
-              <ul className="mt-6 space-y-4">
+              <ul className="mt-6 space-y-5">
                 {WHY_US.map(({ Icon, text }) => (
                   <li key={text} className="flex gap-3 items-start">
-                    <Icon className="mt-0.5 size-5 shrink-0 text-primary" />
-                    <span className="text-foreground/90 font-semibold">
+                    <Icon className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden="true" />
+                    <span className="font-medium text-foreground">
                       {text}
                     </span>
                   </li>
@@ -173,11 +160,11 @@ function HomePage() {
       </section>
 
       {/* Top reviews */}
-      <section className="px-4 py-14">
+      <section className="bg-white px-4 py-14 sm:py-16">
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             title="What people say"
-            subtitle="A few words from the chairs this month."
+            subtitle="Sample testimonials for preview only. Replace with salon-approved reviews before publishing."
             className="mb-7"
           />
           <div className="grid md:grid-cols-3 gap-5">

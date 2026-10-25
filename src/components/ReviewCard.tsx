@@ -23,30 +23,30 @@ export function ReviewCard({ review, index = 0, className }: ReviewCardProps) {
         delay: Math.min(index * 0.06, 0.3),
         ease: [0.2, 0.8, 0.2, 1],
       }}
-      whileHover={{ y: -4 }}
+      whileHover={{ y: -2 }}
       className={cn(
-        "rounded-[2rem] bg-card p-7 border border-border shadow-2xl flex flex-col",
+        "flex flex-col rounded-2xl border border-border bg-card p-6 shadow-[0_12px_34px_-28px_rgba(20,30,55,0.42)] sm:p-7",
         className,
       )}
     >
-      <div className="flex items-center gap-1 text-brand-dark">
+      <div className="flex items-center gap-1 text-primary">
         {Array.from({ length: MAX_RATING }).map((_, i) => (
           <Star
             key={i}
             className={cn(
               "size-4",
-              i < review.rating ? "fill-primary" : "text-muted-foreground",
+              i < review.rating ? "fill-primary" : "text-border",
             )}
             aria-hidden="true"
           />
         ))}
         <span className="sr-only">{review.rating} out of 5 stars</span>
       </div>
-      <blockquote className="mt-4 font-display text-lg sm:text-xl leading-snug">
+      <blockquote className="mt-4 font-display text-xl leading-snug text-foreground sm:text-2xl">
         &ldquo;{review.text}&rdquo;
       </blockquote>
       <figcaption className="mt-6 flex items-center gap-3">
-        <span className="size-11 rounded-full bg-secondary grid place-items-center font-display font-bold text-secondary-foreground">
+        <span className="grid size-11 shrink-0 place-items-center rounded-full bg-secondary font-display text-lg font-semibold text-secondary-foreground">
           {review.name.charAt(0)}
         </span>
         <span>
